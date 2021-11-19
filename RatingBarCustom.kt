@@ -19,14 +19,14 @@ class RatingBarCustom @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
 
-    val bitmapUnSelected: Bitmap by lazy {
+    private val bitmapUnSelected: Bitmap by lazy {
         return@lazy BitmapFactory.decodeResource(
             resources,
             R.drawable.star_grey_padd
         );
     }
 
-    val bitmapSelected: Bitmap by lazy {
+    private val bitmapSelected: Bitmap by lazy {
         return@lazy BitmapFactory.decodeResource(
             resources,
             R.drawable.starr_green_padd
@@ -34,21 +34,21 @@ class RatingBarCustom @JvmOverloads constructor(
     }
 
 
-    var paddingStart = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
-    var paddingEnd = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
-    var dividerWidth = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
-    var paddingTop = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
-    var paddingBottom = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
+    private var paddingStart = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
+    private var paddingEnd = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
+    private var dividerWidth = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
+    private  var paddingTop = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
+    private   var paddingBottom = AppApplication.instance.resources.getDimension(R.dimen._8sdp)
 
-    var startX = 0f
-    var endX = 0f
-    var startY = 0f
-    var canvasWidth = 0f
-    var canvasHeight = 0f
-    var bitMapWidth = 0f
-    var total5startWidth = 0f
+    private  var startX = 0f
+    private  var endX = 0f
+    private var startY = 0f
+    private  var canvasWidth = 0f
+    private  var canvasHeight = 0f
+    private  var bitMapWidth = 0f
+    private  var total5startWidth = 0f
 
-    var isRtl: Boolean = false
+    private var isRtl: Boolean = false
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas?.let { canvas ->
@@ -79,7 +79,7 @@ class RatingBarCustom @JvmOverloads constructor(
     }
 
     var rating = 5
-    var firstDownX = 0f
+    private  var firstDownX = 0f
 
 
     var onRatingChange: ((rating: Int) -> Unit)? = null
